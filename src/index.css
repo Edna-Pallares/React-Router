@@ -46,5 +46,6 @@ body > div {
 }
 
 .home {
-background-color: rgb(19, 95, 162);
+  background-color: black;
+  color: white;
 }
