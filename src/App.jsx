@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./index.css";
 import { Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
 import Red from "./components/Red";
 import Blue from "./components/Blue";
-import Home from "./components/Home";
+import Yellow from "./components/Yellow";
+import Donotclick from "./components/Donotclick";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,15 +14,20 @@ function App() {
     <>
       <div id="container">
         <div id="navbar">
+          <Link to="/home">Home</Link>
           <Link to="/blue">Blue</Link>
           <Link to="/red">Red</Link>
-          <Link to="/home">Home</Link>
+          <Link to="/yellow">Yellow</Link>
+          <Link to="/doNot">Do Not Click Here</Link>
+
         </div>
         <div id="main-section">
           <Routes>
+            <Route path="/home" element={<Home />} />
             <Route path="/blue" element={<Blue />} />
             <Route path="/red" element={<Red />} />
-            <Route path="/home" />
+            <Route path="/yellow" element={<Yellow />} />
+            <Route path="/doNot" element={<Donotclick />} />
           </Routes>
         </div>
       </div>
